@@ -1,6 +1,1 @@
-/data/
-/embeddings/
-/results/
-/.idea/
-/.ipynb_checkpoints/
-src/scratch.py
+.ipynb_checkpoints/
