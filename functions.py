@@ -141,7 +141,7 @@ def plot_accumulated_use(Accumulated, uses):
     fig, ax = plt.subplots(figsize = (10,10))
     colors = plt.cm.Set2(range(len(uses))) 
     uses_sum = uses[uses != 'Total']
-    end = Accumulated[uses].iloc[-1] 
+    end = Accumulated[uses_sum].iloc[-1] 
     for k in range(len(uses)):
         ax.plot(Accumulated[uses[k]], label = uses[k], color = colors[k])
         if uses[k] == 'Total':
