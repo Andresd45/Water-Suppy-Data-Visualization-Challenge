@@ -69,6 +69,8 @@ def summarize_df(df, feature):
 # df_use, Accumulated, Accumulated_days = summarize_df(df, 'Volume(gal)')
 
 def day_hour_use(df_use, use, colorm):
+    '''This function plots the combined days and hours 
+    in a colormap plot'''
     cmap = clr.LinearSegmentedColormap.from_list('custom blue',
                                      ['#ffffff',colorm],
                                      N=256)
@@ -89,6 +91,8 @@ def day_hour_use(df_use, use, colorm):
     plt.colorbar(shrink = 0.5)
 
 def plot_daily_use(Accumulated_days, uses):  
+    '''This function plots the daily consumption
+    by each of the (uses) input in the argument'''
     colors = plt.cm.Set2(range(len(uses))) 
     fig, ax = plt.subplots(len(uses),1, figsize = (20,20))
     days = Accumulated_days['Days']
@@ -110,9 +114,13 @@ def plot_daily_use(Accumulated_days, uses):
                        fontsize=20)
         
         ax[k].set_title("Daily use {} (Volume(gal))".format(uses[k]), fontsize=30)
-        
+
+
+    
         
 def plot_hour_use(Accumulated_hours, uses):
+    '''This function plots the hourly agregatted consumption
+    by each of the (uses) input in the argument'''
     colors = plt.cm.Set2(range(len(uses))) 
     fig, ax = plt.subplots(len(uses),1, figsize = (30,20))
     hours = Accumulated_hours['Hours']
